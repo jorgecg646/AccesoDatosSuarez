@@ -100,7 +100,12 @@ public class Practica8_Tema1_AD {
         scanner.nextLine(); // Consumir nueva línea
 
         for (String campo : campos) {
-            System.out.print("Ingrese " + campo + ": ");
+            if (campo == "FECHA_NAC"){
+                System.out.print("Ingrese " + campo + " con formato(dd/mm/yyy): ");
+            }
+            else{
+                System.out.print("Ingrese " + campo + ": ");
+            }
             String valor = scanner.nextLine();
             nuevoRegistro.put(campo, valor);
         }
@@ -124,7 +129,12 @@ public class Practica8_Tema1_AD {
         scanner.nextLine(); // Consumir nueva línea
         Map<String, String> registroModificar = new HashMap<>();
         for (String campo : campos) {
-            System.out.print("Ingrese nuevo " + campo + ": ");
+            if (campo == "FECHA_NAC"){
+                System.out.print("Ingrese nuevo " + campo + " con formato(dd/mm/yyy): ");
+            }
+            else{
+                System.out.print("Ingrese nuevo " + campo + ": ");
+            }
             String valor = scanner.nextLine();
             registroModificar.put(campo, valor);
         }
@@ -141,11 +151,13 @@ public class Practica8_Tema1_AD {
         campos.add("NOMBRE");
         campos.add("DIRECCION");
         campos.add("CP");
+        campos.add("FECHA_NAC");
 
         camposLength.add(9);
         camposLength.add(32);
         camposLength.add(32);
         camposLength.add(5);
+        camposLength.add(10);
 
         Practica8_Tema1_AD faa;
         try {
