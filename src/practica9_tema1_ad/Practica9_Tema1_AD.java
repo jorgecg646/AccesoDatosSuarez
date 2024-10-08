@@ -82,7 +82,12 @@ private File f;
         long numRegistro = scanner.nextLong();
         scanner.nextLine();
         for (String campo : campos) {
-            System.out.print("Ingrese " + campo + ": ");
+            if (campo == "FECHA_NAC"){
+                System.out.print("Ingrese " + campo + " con formato(dd/mm/yyy): ");
+            }
+            else{
+                System.out.print("Ingrese " + campo + ": ");
+            }
             String valor = scanner.nextLine();
             nuevoRegistro.put(campo, valor);
         }
@@ -106,7 +111,12 @@ private File f;
         scanner.nextLine();
         Map<String, String> registroModificar = new HashMap<>();
         for (String campo : campos) {
-            System.out.print("Ingrese nuevo " + campo + ": ");
+            if (campo == "FECHA_NAC"){
+                System.out.print("Ingrese nuevo " + campo + " con formato(dd/mm/yyy): ");
+            }
+            else{
+                System.out.print("Ingrese nuevo " + campo + ": ");
+            }
             String valor = scanner.nextLine();
             registroModificar.put(campo, valor);
         }
@@ -226,11 +236,13 @@ private File f;
         campos.add("NOMBRE");
         campos.add("DIRECCION");
         campos.add("CP");
+        campos.add("FECHA_NAC");
 
         camposLength.add(9);
         camposLength.add(32);
         camposLength.add(32);
         camposLength.add(5);
+        camposLength.add(10);
 
         Practica9_Tema1_AD faa;
         try {
