@@ -110,7 +110,7 @@ public class Practica8_Tema1_AD {
 
     public void leerRegistroMenu() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingrese el numero de registro a leer (0 a " + (getNumReg() - 1) + "): ");
+        System.out.print("Ingrese el numero de registro a leer (0 a " + (getNumReg()) + "): ");
         long numRegistroLeer = scanner.nextLong();
         scanner.nextLine(); // Consumir nueva línea
         Map<String, String> registroLeido = leerRegistro(numRegistroLeer);
@@ -119,7 +119,7 @@ public class Practica8_Tema1_AD {
 
     public void modificarRegistro() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingrese el numero de registro a modificar (0 a " + (getNumReg() - 1) + "): ");
+        System.out.print("Ingrese el numero de registro a modificar (0 a " + (getNumReg()) + "): ");
         long numRegistroModificar = scanner.nextLong();
         scanner.nextLine(); // Consumir nueva línea
         Map<String, String> registroModificar = new HashMap<>();
